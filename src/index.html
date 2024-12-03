@@ -1,0 +1,152 @@
+<html>
+<head>
+    <title>Bootstrap Booking Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js">           </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" /> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
+    <link href="style.css" rel="stylesheet" >
+    <script src="index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <h1 class="red col-md-12">Bootstrap Booking Form:</h1>
+            <p class="well well-sm col-md-12">Fill out the form and click the submit button when complete...</p>
+        </div>
+        <form id="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">User:</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="username" class="col-md-4 col-form-label">Username:</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="username" placeholder="Type Username..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName" class="col-md-4 col-form-label">First Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="firstName" placeholder="Type First Name..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="col-md-4 col-form-label">Last Name:</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="lastName" placeholder="Type Last Name..." required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Contact:</div>
+                        <div class="panel-body">
+                            <div class="form-group input-group .m-0">
+                                    <label class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></label>
+                                    <input type="text" class="form-control" name="inputPhone" placeholder="Type phone#..." required>
+                            </div>
+                            <div class="form-group input-group .m-0">
+                                <label class="input-group-addon"><i class="fa fa-fax" aria-hidden="true"></i></label>
+                                <input type="text" class="form-control" name="inputFax" placeholder="Type fax#..." required>
+                            </div>
+                            <div class="form-group input-group .m-0">
+                                <label class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                                <input type="text" class="form-control" name="inputEmail" placeholder="Type e-mail..." required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Schedule:</div>
+                        <div class="panel-body form">
+                            <div class="form-group form-row">
+                                <label for="adults">Adults</label>
+                                <select type="button" class="form-control" id="adults" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="row form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="checkIn">Check In:</label>
+                                    <input type="date" class="form-control" id="checkIn" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="checkOut">Check Out:</label>
+                                    <input type="date" class="form-control" id="checkOut" required>
+                                </div>
+                            </div>
+                            <div class="row form-row">
+                                <div class="col-md-6">
+                                    <label for="days">Days:</label>
+                                    <input type="text" class="form-control" id="displayDays" name="displayDays" placeholder="Displays days..."readonly>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label for="cost">Cost:</label>
+                                    <input type="text" class="form-control" id="displayCost" name="displayCost" placeholder="Displays cost..." readonly required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Other:</div>
+                    <div class="panel-body" style="height:680px">
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" name="message" rows="25" placeholder="Type message here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="range">Range:</label>
+                            <input type="range" min="1" max="10" value="5" class="slider" name="range">
+                        </div>
+                        <div class="form-group">
+                            <label for="radio">Priority:</label>
+                                <label class="radio-inline">
+                                <input type="radio" name="optradio" checked> Low
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="optradio"> Med
+                                </label>
+                                <label class="radio-inline">
+                                <input type="radio" name="optradio"> High
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <button type="reset" id="reset" class="btn btn-primary btn-block"><i class="bi bi-eraser-fill"></i> Reset</button>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" id="submit" class="btn btn-success btn-block"><i class="bi bi-send-fill"></i>Submit</button>
+                </div>
+        </div>
+        </form>
+        <div class = "row">
+            <br>
+        </div>
+
+    </div>
+</body>
+
+</html>
